@@ -80,7 +80,7 @@ class TranslationController extends Controller
                     $queryDql .= ' ' . strtoupper($filterToken);
                 }
                 else if (substr($filterToken, 0, 1) == '!') {
-                    $queryDql .= ' t.source NOT LIKE \'' . $filterToken . '\'';
+                    $queryDql .= ' t.source NOT LIKE \'' . substr($filterToken, 1) . '\'';
                 }
                 else {
                     $queryDql .= ' t.source LIKE \'' . $filterToken . '\'';
